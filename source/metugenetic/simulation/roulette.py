@@ -2,6 +2,7 @@ import random
 import collections
 
 Box = collections.namedtuple('Box', ('bottom', 'top', 'partition'))
+PRESSURE_REDUCTION = 0.01
 
 
 class Roulette:
@@ -11,6 +12,8 @@ class Roulette:
         self._stuff_into_boxes(values)
 
     def _stuff_into_boxes(self, values):
+        pressure_reducer = PRESSURE_REDUCTION * max(values)
+        values = [value + pressure_reducer for value in values]
         # Split values into matching boxes; if a box isn't full, add another value
         normal_values = [value * len(values) for value in values]
         large_values = {index: value for index, value in enumerate(normal_values) if value >= self._box_size}

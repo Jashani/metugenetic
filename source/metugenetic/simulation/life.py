@@ -6,7 +6,7 @@ class Life:
     def __init__(self, size, initial_cells):
         self._size = size
         self.initial_cells = initial_cells
-        self.cells = initial_cells
+        self.cells = set(initial_cells)
         self._neighbour_positions = [-size - 1, -size, -size + 1, -1, 1, size - 1, size, size + 1]
         self._grid_size = size ** 2
 
