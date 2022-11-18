@@ -1,0 +1,8 @@
+mutation_chance: 0.1
+fittest_minimum: 1
+fittest_limiter: 4
+pressure_reduction: 0.01
+twin_avoidance_factor: 0.01
+crossover_method: mask  # 'mask' or 'partition'
+max_iterations: 2000
+is_torus: false  # world edges continue into opposite edge
