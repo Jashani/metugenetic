@@ -1,8 +1,8 @@
 import random
 import collections
+from metugenetic.config import config
 
 Box = collections.namedtuple('Box', ('bottom', 'top', 'partition'))
-PRESSURE_REDUCTION = 0.01
 
 
 class Roulette:
@@ -12,7 +12,7 @@ class Roulette:
         self._stuff_into_boxes(values)
 
     def _stuff_into_boxes(self, values):
-        pressure_reducer = PRESSURE_REDUCTION * max(values)
+        pressure_reducer = config.pressure_reduction * max(values)
         values = [value + pressure_reducer for value in values]
         # Split values into matching boxes; if a box isn't full, add another value
         normal_values = [value * len(values) for value in values]
