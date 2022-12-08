@@ -6,3 +6,6 @@ twin_avoidance_factor: 0.01
 crossover_method: mask  # 'mask' or 'partition'
 max_iterations: 2000
 is_torus: false  # world edges continue into opposite edge
+board_size: 12
+generations: 100
+population: 100

@@ -42,7 +42,7 @@ class Breedery:
         fittest_count = random.randint(config.fittest_minimum, self._fittest_maximum)
         fittest = sorted(zip(evaluations, self.population), key=lambda pair: pair[0])[-fittest_count:]
         individuals = [individual for evaluation, individual in fittest]
-        print(f"Best config: {individuals[-1].initial_cells}")
+        print(f"\tBest config: {individuals[-1].initial_cells}")
         return individuals
 
     def _breed(self, parent_1, parent_2):
